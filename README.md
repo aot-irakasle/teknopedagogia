@@ -1,0 +1,2 @@
+# teknopedagogia
+Irakasleen akreditazio digitala
