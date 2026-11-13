@@ -6,13 +6,13 @@
 <title>Nire portfolio digitala · Animazioaren Historia · Arantza Otaduy Tristán</title>
 <meta name="author" content="Arantza Otaduy Tristán">
 <meta name="description" content="Arantza Otaduy Tristánen portfolio digitala (Irakasleen Akreditazio Digitala, IAD): Animazioaren Historia (AN1), Animazioko Goi-mailako Heziketa Zikloa. Edukia eta kodea: CC0 1.0.">
-<meta name="license" content="CC0 1.0 (03.1 ariketaren txantiloia izan ezik)">
+<meta name="license" content="CC0 1.0 (ariketen txantiloiak izan ezik: Hezkuntza Saila, beste CC lizentzia bat)">
 <meta name="theme-color" content="#3a6ea5">
 <!--
   NIRE PORTFOLIO DIGITALA · Arantza Otaduy Tristán · CC0 1.0 (domeinu publikoa)
   Portfolioa itxita dago (ezin da hemen editatu), baina HTML hau libreki deskargatu, aldatu eta berrerabil dezakezu (CC0 1.0).
-  SALBUESPENA: 03.1 ariketaren txantiloia (pop-upa) Hezkuntza Sailarena da (Berritzegune Nagusia), CC BY-NC-SA 4.0: aitortza mantendu, ez-komertziala, lizentzia bera.
-  Egitura: 00 Aurkibidea · 01 Orri nagusia · 02 Aurkezpena · 03 Eduki digitalak (03.1 ariketa, pop-upa)
+  SALBUESPENA: ariketen txantiloiak (pop-upak) Hezkuntza Sailarenak dira (Berritzegune Nagusia) eta beste CC lizentzia bat dute; errespetatu jatorrizko lizentzia.
+  Egitura: 00 Aurkibidea · 01 Orri nagusia · 02 Aurkezpena · 03 Eduki digitalak (03.1 eta 03.2 ariketak, pop-upak)
   "Konpetentzia digitala gure arloan" txantiloia: Hezkuntza Saila © 2024, Berritzegune Nagusia (CC BY-NC-SA 4.0).
 -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -512,10 +512,10 @@ section:first-of-type{padding-top:0}
 .hint{font-size:.82rem;color:#6b7f95;margin-top:10px}
 
 /* ================= POP-UPA: iris-in irekiera (animazio klasikoaren trantsizioa) ================= */
-#kd{position:fixed;inset:0;z-index:150;overflow-y:auto;overscroll-behavior:contain;visibility:hidden;
+.kd-modal{position:fixed;inset:0;z-index:150;overflow-y:auto;overscroll-behavior:contain;visibility:hidden;
   background:radial-gradient(600px 400px at 85% 0%,rgba(255,238,186,.6),transparent 60%),linear-gradient(180deg,#5b8fc7 0%,#9ccbe9 40%,#dcebf8 100%);
   clip-path:circle(0px at var(--ox,50%) var(--oy,50%));transition:clip-path .85s cubic-bezier(.7,0,.2,1),visibility 0s linear .85s}
-#kd.open{visibility:visible;clip-path:circle(160vmax at var(--ox,50%) var(--oy,50%));transition:clip-path .85s cubic-bezier(.7,0,.2,1),visibility 0s}
+.kd-modal.open{visibility:visible;clip-path:circle(160vmax at var(--ox,50%) var(--oy,50%));transition:clip-path .85s cubic-bezier(.7,0,.2,1),visibility 0s}
 body.kd-lock{overflow:hidden}
 .kd-clouds{position:fixed;inset:0;pointer-events:none;overflow:hidden}
 .kd-clouds i{position:absolute;left:-260px;width:var(--w);height:calc(var(--w)*.32);background:#fff;border-radius:999px;opacity:.75;animation:drift var(--t) linear infinite;animation-delay:var(--d)}
@@ -527,7 +527,7 @@ body.kd-lock{overflow:hidden}
 .kd-clouds i:nth-child(4){top:86%;--w:140px;--t:50s;--d:-5s}
 .kd-sheet{position:relative;max-width:880px;width:calc(100% - 28px);margin:44px auto 60px;background:#fdfeff;border-radius:26px;overflow:hidden;
   box-shadow:0 40px 80px -30px rgba(36,70,107,.6);transform:translateY(60px) scale(.94);opacity:0;transition:transform .8s var(--bounce) .35s,opacity .5s ease .35s}
-#kd.open .kd-sheet{transform:none;opacity:1}
+.kd-modal.open .kd-sheet{transform:none;opacity:1}
 .kd-head{position:relative;display:flex;gap:18px;align-items:center;padding:26px 70px 46px 26px;background:linear-gradient(120deg,#24466b,#3a6ea5 55%,#7fbbe3);color:#fff;overflow:hidden}
 .kd-head::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(45deg,transparent 0 46px,rgba(255,255,255,.06) 46px 48px),repeating-linear-gradient(-45deg,transparent 0 46px,rgba(255,255,255,.06) 46px 48px)}
 .kd-wave{position:absolute;left:0;right:0;bottom:-1px;width:100%;height:34px}
@@ -541,7 +541,7 @@ body.kd-lock{overflow:hidden}
 .kd-x:hover{transform:rotate(90deg) scale(1.1);background:var(--accent);border-color:var(--accent)}
 .kd-body{padding:12px 28px 10px}
 .kd-row{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .7s var(--bounce);transition-delay:calc(.55s + var(--k) * .12s)}
-#kd.open .kd-row{opacity:1;transform:none}
+.kd-modal.open .kd-row{opacity:1;transform:none}
 /* Eskuz marraztutako ertzak (txantiloiaren estiloa) */
 .sk{border:2.5px solid #23364d;border-radius:255px 14px 225px 14px/14px 225px 14px 255px;padding:14px 18px;margin:14px 0;background:#fdfeff}
 .sk b:first-child,.sk>b{letter-spacing:.02em}
@@ -564,7 +564,7 @@ body.kd-lock{overflow:hidden}
 .kd-chips b{margin-right:6px}
 .kdc{position:relative;font-weight:800;font-size:.9rem;border:2px dashed #9fb2c6;color:#9fb2c6;border-radius:999px;padding:4px 14px;cursor:help;transition:transform .3s var(--bounce)}
 .kdc.on{border:2px solid #3a6ea5;background:linear-gradient(135deg,#3a6ea5,#5b8fc7);color:#fff;box-shadow:0 6px 14px -8px rgba(36,70,107,.8)}
-#kd.open .kdc.on{animation:chip .7s var(--bounce) both;animation-delay:calc(.9s + var(--k,0) * .12s)}
+.kd-modal.open .kdc.on{animation:chip .7s var(--bounce) both;animation-delay:calc(.9s + var(--k,0) * .12s)}
 @keyframes chip{0%{transform:scale(0) rotate(-20deg)}60%{transform:scale(1.25,.8)}80%{transform:scale(.92,1.1)}100%{transform:none}}
 .kdc:hover{transform:translateY(-3px) scale(1.06)}
 .kdc::after{content:attr(data-tip);position:absolute;left:50%;bottom:calc(100% + 10px);transform:translate(-50%,6px);background:#23364d;color:#fff;font-weight:600;font-size:.75rem;white-space:nowrap;padding:6px 10px;border-radius:8px;opacity:0;pointer-events:none;transition:.25s;z-index:5}
@@ -581,10 +581,10 @@ body.kd-lock{overflow:hidden}
 .kd-matrix span:first-child{font-size:.82rem;font-weight:700;text-align:left}
 .kd-matrix i{height:22px;border-radius:6px;background:rgba(255,255,255,.14)}
 .kd-matrix i.y{background:var(--wheat);transform:scale(0);transition:transform .5s var(--bounce)}
-#kd.open .kd-matrix i.y{transform:scale(1)}
-#kd.open .kd-matrix>div:nth-child(2) i.y{transition-delay:1.6s}
-#kd.open .kd-matrix>div:nth-child(3) i.y{transition-delay:1.75s}
-#kd.open .kd-matrix>div:nth-child(4) i.y{transition-delay:1.9s}
+.kd-modal.open .kd-matrix i.y{transform:scale(1)}
+.kd-modal.open .kd-matrix>div:nth-child(2) i.y{transition-delay:1.6s}
+.kd-modal.open .kd-matrix>div:nth-child(3) i.y{transition-delay:1.75s}
+.kd-modal.open .kd-matrix>div:nth-child(4) i.y{transition-delay:1.9s}
 .kd-legend{display:flex;flex-wrap:wrap;gap:8px 16px;font-size:.82rem;color:#3d5675;margin:18px 0}
 .kd-legend b{width:100%}
 .kd-legend i{font-style:normal;font-weight:800;color:#fff;background:#3a6ea5;border-radius:6px;padding:1px 6px;margin-right:4px}
@@ -600,12 +600,12 @@ body.kd-lock{overflow:hidden}
   .kd-ce{padding-left:18px;padding-top:56px}.kdc::after{white-space:normal;width:160px}
   .kd-matrix>div{grid-template-columns:70px repeat(5,1fr)}
 }
-@media (prefers-reduced-motion:reduce){#kd{transition:none}.kd-row,.kd-sheet{opacity:1;transform:none}.kd-matrix i.y{transform:none}}
+@media (prefers-reduced-motion:reduce){.kd-modal{transition:none}.kd-row,.kd-sheet{opacity:1;transform:none}.kd-matrix i.y{transform:none}}
 @media print{
   body.kd-lock .head,body.kd-lock main,body.kd-lock footer,body.kd-lock .filmnav,body.kd-lock .grain{display:none!important}
   body.kd-lock{overflow:visible}
-  #kd{position:static;clip-path:none!important;visibility:visible;background:#fff;overflow:visible}
-  body:not(.kd-lock) #kd{display:none}
+  .kd-modal{position:static;clip-path:none!important;visibility:visible;background:#fff;overflow:visible}
+  body:not(.kd-lock) .kd-modal,.kd-modal:not(.open){display:none!important}
   .kd-clouds,.kd-x,.kd-actions{display:none!important}
   .kd-sheet{box-shadow:none;margin:0;width:100%;max-width:none;opacity:1;transform:none}
   .kd-row{opacity:1;transform:none}.kd-matrix i.y{transform:none}
@@ -641,6 +641,85 @@ body.kd-lock{overflow:hidden}
 .dl-btn span{display:inline-block;animation:hop 1.4s var(--bounce) infinite}
 @media (max-width:700px){.dl-box{grid-template-columns:1fr;text-align:left}.fab-lab{display:none}.fab-toc{padding:6px}}
 @media print{.to-toc-wrap,.fab-toc,.dl-btn{display:none!important}}
+
+/* ================= 03.2 SAMR pop-upa ================= */
+.samr-stairs{position:relative;height:190px;margin:18px 0 6px;display:grid;grid-template-columns:repeat(4,1fr);gap:6px;align-items:end}
+.samr-stairs .st{border-radius:14px 14px 4px 4px;color:#fff;display:flex;flex-direction:column;justify-content:flex-end;padding:10px 12px;transform-origin:bottom;transform:scaleY(0);transition:transform .7s var(--bounce)}
+.samr-stairs .st b{font-family:var(--display);font-size:1.8rem;line-height:1}
+.samr-stairs .st small{font-size:.72rem;font-weight:800;letter-spacing:.04em;opacity:.95}
+.samr-stairs .s1{height:52px;background:#7fbbe3}.samr-stairs .s2{height:82px;background:#5b8fc7}
+.samr-stairs .s3{height:112px;background:#3a6ea5}.samr-stairs .s4{height:142px;background:#24466b}
+.kd-modal.open .samr-stairs .st{transform:none}
+.kd-modal.open .samr-stairs .s1{transition-delay:.7s}.kd-modal.open .samr-stairs .s2{transition-delay:.85s}
+.kd-modal.open .samr-stairs .s3{transition-delay:1s}.kd-modal.open .samr-stairs .s4{transition-delay:1.15s}
+.climber{position:absolute;left:calc(12.5% - 13px);bottom:52px;width:26px;height:26px;border-radius:50%;background:var(--accent);box-shadow:0 4px 0 rgba(36,70,107,.25);opacity:0}
+.kd-modal.open .climber{opacity:1;animation:climb 4.8s cubic-bezier(.4,0,.6,1) 1.5s infinite}
+@keyframes climb{
+  0%{transform:translate(0,0) scale(1.3,.7)} 5%{transform:translate(0,-34px) scale(.9,1.1)} 12%{transform:translate(calc(var(--sw,180px)*.5),-58px)}
+  20%{transform:translate(var(--sw,180px),-30px) scale(1.3,.7)} 25%{transform:translate(var(--sw,180px),-64px) scale(.9,1.1)} 32%{transform:translate(calc(var(--sw,180px)*1.5),-88px)}
+  40%{transform:translate(calc(var(--sw,180px)*2),-60px) scale(1.3,.7)} 45%{transform:translate(calc(var(--sw,180px)*2),-94px) scale(.9,1.1)} 52%{transform:translate(calc(var(--sw,180px)*2.5),-118px)}
+  60%{transform:translate(calc(var(--sw,180px)*3),-90px) scale(1.3,.7)} 66%{transform:translate(calc(var(--sw,180px)*3),-120px) scale(1)} 80%{transform:translate(calc(var(--sw,180px)*3),-90px);opacity:1}
+  90%{transform:translate(calc(var(--sw,180px)*3),-90px);opacity:0} 100%{transform:translate(0,0);opacity:0}}
+.grp{position:absolute;top:0;font-size:.7rem;font-weight:800;letter-spacing:.14em;color:#3a6ea5;border-bottom:2px solid #b9dcf2;padding-bottom:3px}
+.grp.g1{left:0;width:calc(50% - 3px)}.grp.g2{left:calc(50% + 3px);width:calc(50% - 3px);color:#24466b;border-color:#3a6ea5}
+.samr-id{position:relative;padding-left:46px;margin-top:22px}
+.samr-id .clip{position:absolute;left:10px;top:-14px;width:22px;height:46px;transform-origin:50% 10%;animation:clipswing 3s ease-in-out infinite}
+@keyframes clipswing{0%,100%{transform:rotate(-8deg)}50%{transform:rotate(8deg)}}
+.samr-id p{margin:.4em 0}
+.samr-band{display:grid;grid-template-columns:54px 1fr;gap:14px;margin:22px 0}
+.band-lab{border-radius:26px;display:flex;align-items:center;justify-content:center;background:linear-gradient(180deg,#e3eff9,#b9dcf2)}
+.samr-band.b2 .band-lab{background:linear-gradient(180deg,#7fbbe3,#3a6ea5);color:#fff}
+.band-lab span{writing-mode:vertical-rl;transform:rotate(180deg);font-weight:900;letter-spacing:.18em;font-size:.95rem;color:#24466b}
+.samr-band.b2 .band-lab span{color:#fff}
+.lvl{margin:0 0 12px}
+.lvl p{margin:.55em 4px 0;line-height:1.55}
+.lvl-pill{display:flex;align-items:center;gap:10px;border-radius:999px;padding:8px 18px;font-weight:900;letter-spacing:.03em;color:#23364d}
+.lvl-pill i{font-style:normal;width:28px;height:28px;border-radius:50%;display:grid;place-items:center;color:#fff;font-family:var(--display);font-weight:900}
+.p-s{background:#e3eff9}.p-s i{background:#7fbbe3}
+.p-a{background:#d4e6f6}.p-a i{background:#5b8fc7}
+.p-m{background:#c9def2}.p-m i{background:#3a6ea5}
+.p-r{background:#bcd3ec}.p-r i{background:#24466b}
+.p-e{background:#eef1f5;color:#4b6a88;font-size:.9rem}
+.kd-modal.open .lvl-pill i{animation:chip .7s var(--bounce) both;animation-delay:1.2s}
+.samr-concl{background:#e8f2fb}
+@media (max-width:700px){.samr-stairs{height:170px}.samr-stairs .st small{font-size:.6rem}.samr-band{grid-template-columns:34px 1fr;gap:8px}.band-lab span{font-size:.75rem}}
+@media print{.climber{display:none}.samr-stairs .st{transform:none}.lvl-pill,.band-lab,.samr-stairs .st{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+
+/* ===== Kicker-en idazketa-efektua: testu osoa erakutsi (max-width mugarik gabe) ===== */
+.kicker.tw{max-width:none!important;overflow:visible;white-space:normal}
+.js .kicker.tw:not(.in){opacity:0}
+.js .kicker.tw.in{animation:typeclip 1.2s steps(32) both,caret .7s step-end 6!important}
+@keyframes typeclip{from{clip-path:inset(0 100% 0 0)}to{clip-path:inset(0 0 0 0)}}
+@media (prefers-reduced-motion:reduce){.js .kicker.tw{clip-path:none!important}}
+@media print{.kicker.tw{clip-path:none!important}}
+.kicker.tw{border-radius:14px}
+
+/* ================= 03 Eduki digitalak: sarrera + flip-booka ================= */
+.ed-intro{margin:10px 0 34px}
+.ed-sites{font-size:.85rem;color:#6b7f95}
+.flip-wrap{--fd:.11s;display:flex;flex-direction:column;align-items:center;gap:14px;cursor:pointer}
+.flip-wrap small{font-size:.8rem;color:#4b6a88;text-align:center;max-width:30ch}
+.flipbook{position:relative;width:200px;height:232px;perspective:900px;transform:rotate(-3deg);transition:transform .4s var(--bounce)}
+.flip-wrap:hover .flipbook{transform:rotate(0) scale(1.04)}
+.fb-pages{position:absolute;inset:0;background:#fdfeff;border:3px solid #24466b;border-radius:6px 14px 14px 6px;
+  box-shadow:4px 4px 0 #e3eff9,4px 4px 0 3px #24466b,9px 9px 0 #fdfeff,9px 9px 0 3px #9fb2c6,14px 14px 0 #fdfeff,14px 14px 0 3px #c3d4e6;overflow:hidden}
+.fb-pages::before{content:"";position:absolute;left:0;top:0;bottom:0;width:14px;background:repeating-linear-gradient(180deg,#24466b 0 4px,transparent 4px 16px);opacity:.25}
+.fb-pages svg{width:100%;height:100%;display:block}
+.fr{opacity:0;animation:fshow calc(var(--fd) * 8) steps(1,end) infinite;animation-delay:calc((var(--f) - 8) * var(--fd))}
+@keyframes fshow{0%{opacity:1}12.5%,100%{opacity:0}}
+.fb-leaf{position:absolute;inset:0;border-radius:6px 14px 14px 6px;background:linear-gradient(90deg,rgba(253,254,255,0),rgba(227,239,249,.3) 70%,rgba(253,254,255,.45));
+  border:2px solid rgba(36,70,107,.35);transform-origin:left center;animation:leafflip var(--fd) linear infinite;pointer-events:none}
+@keyframes leafflip{0%{transform:rotateY(-6deg);opacity:.6}100%{transform:rotateY(-165deg);opacity:0}}
+.fb-thumb{position:absolute;right:-16px;bottom:18px;width:34px;height:22px;border-radius:12px 10px 10px 12px;background:#f2c3a8;border:2.5px solid #24466b;transform:rotate(-20deg);animation:thumb calc(var(--fd) * 2) ease-in-out infinite alternate}
+@keyframes thumb{to{transform:rotate(-26deg) translateY(-3px)}}
+@media (prefers-reduced-motion:reduce){.fr{opacity:0}.fr[style*="--f:0"]{opacity:1}.fb-leaf{display:none}}
+@media print{.fb-leaf,.fb-thumb{display:none}.fr{animation:none;opacity:0}.fr[style*="--f:0"]{opacity:1}}
+
+/* Flip-booka geldirik dago sagua gainetik pasatu arte (mugikorrean: sakatu) */
+.flip-wrap .fr,.flip-wrap .fb-thumb{animation-play-state:paused}
+.flip-wrap .fb-leaf{animation:none;opacity:0}
+.flip-wrap:hover .fr,.flip-wrap:hover .fb-thumb,.flip-wrap.play .fr,.flip-wrap.play .fb-thumb{animation-play-state:running}
+.flip-wrap:hover .fb-leaf,.flip-wrap.play .fb-leaf{animation:leafflip var(--fd) linear infinite}
 </style>
 </head>
 <body>
@@ -687,7 +766,8 @@ body.kd-lock{overflow:hidden}
       <li><a data-page="orri-nagusia" href="#orri-nagusia"><span class="n">01</span>Orri nagusia</a></li>
       <li><a data-page="aurkezpena" href="#aurkezpena"><span class="n">02</span>Aurkezpena</a></li>
       <li><a data-page="eduki-digitalak" href="#eduki-digitalak"><span class="n">03</span>Eduki digitalak</a>
-        <ol><li><button class="toc-open" data-open-kd><span class="n">03.1</span>Konpetentzia digitala gure arloan <span class="pill">Ireki ▶</span></button></li></ol>
+        <ol><li><button class="toc-open" data-open-kd="kd"><span class="n">03.1</span>Konpetentzia digitala gure arloan <span class="pill">Ireki ▶</span></button></li>
+            <li><button class="toc-open" data-open-kd="samr"><span class="n">03.2</span>SAMR jarduera: «Mugimenduaren artxiboa» <span class="pill">Ireki ▶</span></button></li></ol>
       </li>
       <li class="soon"><span><span class="n">04</span>Irakaskuntza eta ikaskuntza <span class="pill">Laster</span></span></li>
       <li class="soon"><span><span class="n">05</span>Ebaluazioa (modulua) <span class="pill">Laster</span></span></li>
@@ -697,7 +777,7 @@ body.kd-lock{overflow:hidden}
       <div class="cc0" aria-hidden="true"><b>CC0</b><small>1.0</small></div>
       <div>
         <b>Deskargatu eta berrerabili</b>
-        <p>Portfolio honen edukia eta kodea <b>CC0 1.0</b> lizentziapean daude (domeinu publikoa): edonork deskargatu, aldatu eta erabil dezake, baimenik eskatu gabe. Salbuespena: 03.1 ariketaren txantiloia Hezkuntza Sailarena da (Berritzegune Nagusia), eta bere lizentzia mantentzen du.</p>
+        <p>Portfolio honen edukia eta kodea <b>CC0 1.0</b> lizentziapean daude (domeinu publikoa): edonork deskargatu, aldatu eta erabil dezake, baimenik eskatu gabe. Salbuespena: ariketetan erabilitako txantiloiak (03.1, 03.2…) Hezkuntza Sailak egin ditu Berritzegune Nagusitik, eta beste Creative Commons lizentzia bat dute. Txantiloi horiek berrerabiltzean, haien jatorrizko lizentzia errespetatu behar da.</p>
       </div>
       <button class="dl-btn" data-export><span aria-hidden="true">⬇</span> HTML-a deskargatu</button>
     </div>
@@ -839,7 +919,22 @@ body.kd-lock{overflow:hidden}
   <div class="wrap">
       <span class="kicker tw">03 · Eduki digitalak</span> <span class="byline">Arantza Otaduy Tristán</span>
       <h2 data-split>Eduki digitalak</h2>
-      <p class="rv">IADren lehen moduluko ebidentziak (Sites gunean: <i>Aurkibidea › 1. Eduki digitalak</i>).</p>
+      <div class="intro-grid ed-intro">
+        <div class="rv">
+          <p class="lead">Atal honetan, IADren lehen moduluan (<b>Eduki digitalak</b>) egindako ariketak biltzen ditut. Bi galderari erantzun nahi diet: zer konpetentzia digital daude nire ikasgaiaren curriculumean (<b>03.1</b>)? Eta nola eraldatu daiteke teknologiaren bidez benetako jarduera bat, SAMR ereduaren arabera (<b>03.2</b>)?</p>
+          <p class="ed-sites">Sites gunean: <i>Aurkibidea › 1. Eduki digitalak</i></p>
+        </div>
+        <div class="flip-wrap rv" style="--d:.2s" role="img" aria-label="Flip-book animatua: pilota bat jauzika orriak pasatzean">
+          <div class="flipbook">
+            <div class="fb-pages">
+              <svg viewBox="0 0 120 140" aria-hidden="true"><line x1="10" y1="120" x2="110" y2="120" stroke="#c3d4e6" stroke-width="2"/><g class="fr" style="--f:0"><ellipse cx="60" cy="120" rx="4.8" ry="3.5" fill="#24466b" opacity="0.23"/><ellipse cx="60" cy="40.0" rx="12.0" ry="12.0" fill="var(--accent)"/><text x="108" y="134" font-size="8" text-anchor="end" fill="#9fb2c6" font-family="Nunito,sans-serif">1</text></g><g class="fr" style="--f:1"><ellipse cx="60" cy="120" rx="6.4" ry="3.5" fill="#24466b" opacity="0.25"/><ellipse cx="60" cy="49.2" rx="12.0" ry="12.0" fill="var(--accent)"/><text x="108" y="134" font-size="8" text-anchor="end" fill="#9fb2c6" font-family="Nunito,sans-serif">2</text></g><g class="fr" style="--f:2"><ellipse cx="60" cy="120" rx="10.4" ry="3.5" fill="#24466b" opacity="0.31"/><ellipse cx="60" cy="73.0" rx="10.7" ry="13.4" fill="var(--accent)"/><text x="108" y="134" font-size="8" text-anchor="end" fill="#9fb2c6" font-family="Nunito,sans-serif">3</text></g><g class="fr" style="--f:3"><ellipse cx="60" cy="120" rx="14.7" ry="3.5" fill="#24466b" opacity="0.38"/><ellipse cx="60" cy="98.1" rx="10.7" ry="13.4" fill="var(--accent)"/><text x="108" y="134" font-size="8" text-anchor="end" fill="#9fb2c6" font-family="Nunito,sans-serif">4</text></g><g class="fr" style="--f:4"><ellipse cx="60" cy="120" rx="16.0" ry="3.5" fill="#24466b" opacity="0.40"/><ellipse cx="60" cy="110" rx="17" ry="8" fill="var(--accent)"/><text x="108" y="134" font-size="8" text-anchor="end" fill="#9fb2c6" font-family="Nunito,sans-serif">5</text></g><g class="fr" style="--f:5"><ellipse cx="60" cy="120" rx="14.7" ry="3.5" fill="#24466b" opacity="0.38"/><ellipse cx="60" cy="98.1" rx="10.7" ry="13.4" fill="var(--accent)"/><text x="108" y="134" font-size="8" text-anchor="end" fill="#9fb2c6" font-family="Nunito,sans-serif">6</text></g><g class="fr" style="--f:6"><ellipse cx="60" cy="120" rx="10.4" ry="3.5" fill="#24466b" opacity="0.31"/><ellipse cx="60" cy="73.0" rx="10.7" ry="13.4" fill="var(--accent)"/><text x="108" y="134" font-size="8" text-anchor="end" fill="#9fb2c6" font-family="Nunito,sans-serif">7</text></g><g class="fr" style="--f:7"><ellipse cx="60" cy="120" rx="6.4" ry="3.5" fill="#24466b" opacity="0.25"/><ellipse cx="60" cy="49.2" rx="12.0" ry="12.0" fill="var(--accent)"/><text x="108" y="134" font-size="8" text-anchor="end" fill="#9fb2c6" font-family="Nunito,sans-serif">8</text></g></svg>
+            </div>
+            <div class="fb-leaf" aria-hidden="true"></div>
+            <div class="fb-thumb" aria-hidden="true"></div>
+          </div>
+          <small>Kineografoa edo flip-booka (J. B. Linnett, 1868): orriak azkar pasatzean marrazkia mugitu egiten da · pasa sagua gainetik (edo sakatu) orriak pasatzeko</small>
+        </div>
+      </div>
       <article class="lana rv">
         <div class="side">
           <div class="num">03.1</div>
@@ -857,7 +952,29 @@ body.kd-lock{overflow:hidden}
             <li><b>2. urratsa.</b> «Konpetentzia digitala gure arloan» txantiloia zabaldu eta portfolioaren estetikara egokitu dut.</li>
             <li><b>3. urratsa.</b> Hiru konpetentzia espezifiko aukeratu ditut (O.02, O.03 eta O.05), eta haien KD-ak, justifikazioa eta ondorioa idatzi ditut.</li>
           </ol>
-          <button class="kd-open-btn" data-open-kd><span class="cloudico" aria-hidden="true"></span>Ireki ariketa</button>
+          <button class="kd-open-btn" data-open-kd="kd"><span class="cloudico" aria-hidden="true"></span>Ireki ariketa</button>
+          <p class="hint">Pop-up animatu batean irekitzen da. Itxi daiteke ✕ botoiarekin edo Esc teklarekin.</p>
+        </div>
+      </article>
+      <article class="lana rv" style="margin-top:28px">
+        <div class="side">
+          <div class="num">03.2</div>
+          <div><small>Data</small><p>2026ko azaroa</p></div>
+          <div><small>Modulua</small><p>1. Eduki digitalak</p></div>
+          <div><small>Oinarria</small><p>AN1 · UD3 · SAMR eredua</p></div>
+          <div><small>Egoera</small><p>✓ Eginda</p></div>
+        </div>
+        <div class="body">
+          <div class="tags"><span class="tag">S</span><span class="tag">A</span><span class="tag">M</span><span class="tag">R</span><span class="tag dc">UD3</span></div>
+          <h3>SAMR jarduera: «Mugimenduaren artxiboa»</h3>
+          <p>Nire programazioko benetako jarduera bat (UD3: argazkigintzan mugimendua adierazteko irudiak bilatu eta egokitzea) SAMR ereduaren lau mailetan berrantolatu dut: ordezkapena, handitzea, aldaketa eta birdefinizioa.</p>
+          <ol class="steps">
+            <li><b>1. urratsa.</b> «Teoria eta edukiak» liburuko SAMR adibideak irakurri ditut (zientziak, matematika, hizkuntzak eta musika).</li>
+            <li><b>2. urratsa.</b> «SAMR jarduera» txantiloia berrerabili eta portfolioaren estetikara egokitu dut, animatuta.</li>
+            <li><b>3. urratsa.</b> Nire benetako jarduera bat aukeratu dut: UD3ko kronofotografiaren egokitzapena (Muybridge eta Marey).</li>
+            <li><b>4. urratsa.</b> Txantiloiaren atal guztiak bete ditut: jarduera, helburua, lau mailak bakoitza bere ekarpenarekin, eta ondorioak.</li>
+          </ol>
+          <button class="kd-open-btn" data-open-kd="samr"><span class="cloudico" aria-hidden="true"></span>Ireki ariketa</button>
           <p class="hint">Pop-up animatu batean irekitzen da. Itxi daiteke ✕ botoiarekin edo Esc teklarekin.</p>
         </div>
       </article>
@@ -870,7 +987,7 @@ body.kd-lock{overflow:hidden}
 <footer>
   <div class="wrap">
     <span>© 2026 <b>Arantza Otaduy Tristán</b> · Animazioaren Historia (AN1) · ID Arte · Euskadiko Arte eta Goi-mailako Diseinu Eskola Publikoa</span>
-    <span>Edukia eta kodea: <a href="https://creativecommons.org/publicdomain/zero/1.0/deed.eu" target="_blank" rel="noopener">CC0 1.0</a> · 03.1 ariketaren txantiloia: Hezkuntza Saila · Berritzegune Nagusia</span>
+    <span>Edukia eta kodea: <a href="https://creativecommons.org/publicdomain/zero/1.0/deed.eu" target="_blank" rel="noopener">CC0 1.0</a> · Ariketen txantiloiak: Hezkuntza Saila · Berritzegune Nagusia (beste CC lizentzia bat)</span>
   </div>
 </footer>
 
@@ -879,7 +996,7 @@ body.kd-lock{overflow:hidden}
      Txantiloia: Hezkuntza Saila © 2024, Berritzegune Nagusia
      Egokitzapena eta edukia: Arantza Otaduy Tristán
      ========================================================= -->
-<div id="kd" role="dialog" aria-modal="true" aria-labelledby="kdTitle" aria-hidden="true">
+<div id="kd" class="kd-modal" role="dialog" aria-modal="true" aria-labelledby="kdTitle" aria-hidden="true">
   <div class="kd-clouds" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
   <article class="kd-sheet">
     <header class="kd-head">
@@ -990,7 +1107,94 @@ body.kd-lock{overflow:hidden}
 
       <div class="kd-actions">
         <button class="btn2 goto-toc" data-goto-toc><span class="tt-arrow">↑</span> Aurkibidera</button>
-        <button class="btn2" id="kdPrint">🖨 Inprimatu / PDF</button>
+        <button class="btn2" data-print-kd>🖨 Inprimatu / PDF</button>
+        <button class="btn2 solid" data-close-kd>Itxi ariketa</button>
+      </div>
+    </div>
+
+    <footer class="kd-foot">
+      <span>Egilea: <b>Arantza Otaduy Tristán</b> · 2026</span>
+      <span>Txantiloiaren egilea: Hezkuntza Saila © 2024 · Berritzegune Nagusia · Egokitzapena: Arantza Otaduy Tristán</span>
+    </footer>
+  </article>
+</div>
+
+<!-- =========================================================
+     POP-UPA · 03.2 ARIKETA: SAMR JARDUERA
+     Txantiloiaren egilea: Hezkuntza Saila © 2024, Berritzegune Nagusia
+     Egokitzapena eta edukia: Arantza Otaduy Tristán
+     ========================================================= -->
+<div id="samr" class="kd-modal" role="dialog" aria-modal="true" aria-labelledby="samrTitle" aria-hidden="true">
+  <div class="kd-clouds" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+  <article class="kd-sheet">
+    <header class="kd-head">
+      <div class="kd-badge" aria-hidden="true"><span>03.2</span><small>ariketa</small></div>
+      <div>
+        <h2 id="samrTitle" class="kd-title">SAMR jarduera</h2>
+        <p class="kd-by">Egilea: <b>Arantza Otaduy Tristán</b> · 03 · Eduki digitalak</p>
+      </div>
+      <button class="kd-x" data-close-kd aria-label="Itxi">✕</button>
+      <svg class="kd-wave" viewBox="0 0 800 40" preserveAspectRatio="none" aria-hidden="true"><path d="M0 40 C60 10 120 10 160 26 C200 6 260 4 300 24 C350 2 420 4 460 26 C500 8 560 6 600 24 C650 4 720 6 800 22 V40Z" fill="#fdfeff"/></svg>
+    </header>
+
+    <div class="kd-body">
+      <!-- SAMR eskailera animatua: pilota bat mailaz maila igotzen da -->
+      <div class="samr-stairs kd-row" style="--k:0" aria-hidden="true">
+        <div class="st s1"><b>S</b><small>Ordezkapena</small></div>
+        <div class="st s2"><b>A</b><small>Handitzea</small></div>
+        <div class="st s3"><b>M</b><small>Aldaketa</small></div>
+        <div class="st s4"><b>R</b><small>Birdefinizioa</small></div>
+        <span class="climber"></span>
+        <span class="grp g1">HOBEKUNTZA</span><span class="grp g2">ERALDAKETA</span>
+      </div>
+
+      <div class="sk samr-id kd-row" style="--k:1">
+        <svg class="clip" viewBox="0 0 30 64" aria-hidden="true"><path d="M20 10 V48 a8 8 0 0 1 -16 0 V14 a5 5 0 0 1 10 0 V44" fill="none" stroke="#3a6ea5" stroke-width="3.5" stroke-linecap="round"/></svg>
+        <p><b>JARDUERA:</b> «Mugimenduaren artxiboa»: Muybridge eta Marey berrinterpretatzen (UD3 · Lehenengo lau hamarkadak)</p>
+        <p><b>HELBURUA:</b> Ikasleek ulertzea argazkigintzak, eta bereziki kronofotografiak (Eadweard Muybridge, Étienne-Jules Marey), mugimenduaren azterketan eta animazioaren sorreran izan zuen eragina. Horretarako, garai hartako irudiak bilatu eta euren erara egokitzen dituzte, eskua landuz (CEA.0102, CEA.0203, CEA.0301, CEA.0302).</p>
+      </div>
+
+      <!-- HOBEKUNTZA -->
+      <div class="samr-band b1 kd-row" style="--k:2">
+        <div class="band-lab"><span>HOBEKUNTZA</span></div>
+        <div class="band-body">
+          <div class="lvl"><span class="lvl-pill p-s"><i>S</i>ORDEZKAPENA:</span>
+            <p>Muybridgeren eta Mareyren argazki-sekuentziak PDF batean jasotzen dituzte, paperezko fotokopien ordez. Ikasleek sekuentzia bat aukeratu, eskuz marrazten dute paperean eta azalpen laburra testu-prozesadore batean idazten dute.</p></div>
+          <div class="lvl"><span class="lvl-pill p-e">EKARPENA:</span>
+            <p>Ikaskuntza-prozesua ez da funtsean aldatzen, baina irudiak kalitate hobean ikusten dira, eta handitu egin daitezke xehetasunak aztertzeko. Eskuzko marrazkia mantentzen da, eta hori nahita da: UD3aren helburua eskua lantzea da, eta teknologiak ez du hori ordezkatu behar.</p></div>
+          <div class="lvl"><span class="lvl-pill p-a"><i>A</i>HANDITZEA:</span>
+            <p>Ikasleek jatorrizko sekuentziak artxibo digitaletan bilatzen dituzte (Wikimedia Commons edo liburutegi eta museoetako bilduma digitalak). Iturria, data eta lizentzia egiaztatzen dituzte, eta fitxa digital batean jasotzen dituzte (KD1). Egokitzapena tableta batean marrazten dute, geruzak eta <i>onion skin</i> erabiliz jatorrizko fotogramen gainean.</p></div>
+          <div class="lvl"><span class="lvl-pill p-e">EKARPENA:</span>
+            <p>Ataza bera da, baina hobekuntza funtzionalekin: jatorrizko iturriak sarean eskuragarri daude, eta iturriak egiaztatu eta aipatzen ikasten dute. Geruzek eta <i>onion skin</i> delakoak fotogramen arteko aldea ikusarazten dute, eta hori animatzaile baten oinarrizko tresna da. Ikasleak animazio-softwarearen logikarekin ohitzen dira.</p></div>
+        </div>
+      </div>
+
+      <!-- ERALDAKETA -->
+      <div class="samr-band b2 kd-row" style="--k:3">
+        <div class="band-lab"><span>ERALDAKETA</span></div>
+        <div class="band-body">
+          <div class="lvl"><span class="lvl-pill p-m"><i>M</i>ALDAKETA:</span>
+            <p>Taldeka, egokitutako fotogramak berriro mugimendu bihurtzen dituzte: 12 fps-ko GIF edo bideo labur bat sortzen dute. Pantaila zatituan, jatorrizko kronofotografiarekin alderatzen dute. Abiadura eta <i>timing</i>-a aldatzen dituzte, eta argudiatzen dute zer ikusten den orain Muybridgek bere garaian ikusi ezin zuena.</p></div>
+          <div class="lvl"><span class="lvl-pill p-e">EKARPENA:</span>
+            <p>Ataza berriro diseinatzen da: irudi estatiko bat aztertzetik mugimendua denboran aztertzera igarotzen dira. Horrela, kronofotografia zuzenean lotzen da animazioaren printzipioekin (<i>timing</i>, <i>slow in / slow out</i>). Talde-lanak eta alderaketa bisualak hausnarketa sakonagoa eragiten dute (KD2, KD3).</p></div>
+          <div class="lvl"><span class="lvl-pill p-r"><i>R</i>BIRDEFINIZIOA:</span>
+            <p>Ikasleek euren «kronofotografia garaikidea» egiten dute: mugikorraren argazki-segidarekin, ikaskide baten mugimendua (ibili, salto egin, keinu bat egin) erregistratzen dute, baimenarekin. Ondoren, egokitzapen guztiak eta jatorrizko iturriak «Mugimenduaren artxiboa» erakusketa birtualean bilduko dituzte, ikasleen audio-azalpenekin. Erakusketa ID Arteko webgunean edo sare sozialetan argitaratzeko aukera egon daiteke.</p></div>
+          <div class="lvl"><span class="lvl-pill p-e">EKARPENA:</span>
+            <p>Teknologiarik gabe pentsaezina litzatekeen ataza da: ikasleek historia berregiten dute XXI. mendeko tresnekin, eta euren lana komunitatearen esku jartzeko aukera izan dezakete. Irudi-eskubideak eta datu pertsonalak kudeatzen ikasten dute (KD4). Ikasgelatik kanpoko publikoa izateak lanaren kalitatea eta esanahia areagotzen ditu.</p></div>
+        </div>
+      </div>
+
+      <div class="sk samr-concl kd-row" style="--k:4">
+        <b>ONDORIOAK:</b>
+        <p>SAMRek UD3ko jarduera bat mailaz maila aberasten lagundu dit, eta hiru gauza ikusarazi dizkit.</p>
+        <p><b>1. Ordezkapena ez da porrota.</b> Eskuzko marrazkia nahita mantentzen dut, ikasgaiaren helburu pedagogikoa delako. Teknologia ez da helburua: zerbitzura dago.</p>
+        <p><b>2. Hurrengo mailek ikaskuntza eraldatzen dute.</b> Aldaketan eta birdefinizioan, ikasleek historia ez dute soilik ikasten: berregin, animatu eta partekatu egiten dute. Kronofotografiatik animaziora doan bidea euren eskuekin egiten dute.</p>
+        <p><b>3. Mailak ez dira beti lineal.</b> UD3ak 15 ordu ditu, eta ez dira lau mailak beti egingo. Handitzea eta aldaketa ohiko praktika izan daitezke; birdefinizioa, ordea, proiektu bereziek merezi dute (adibidez, ikasturte amaierako erakusketak). Horrek TPACKekin bat egiten du: teknologia, pedagogia eta edukia batera erabaki behar dira.</p>
+      </div>
+
+      <div class="kd-actions">
+        <button class="btn2 goto-toc" data-goto-toc><span class="tt-arrow">↑</span> Aurkibidera</button>
+        <button class="btn2" data-print-kd>🖨 Inprimatu / PDF</button>
         <button class="btn2 solid" data-close-kd>Itxi ariketa</button>
       </div>
     </div>
@@ -1078,27 +1282,31 @@ body.kd-lock{overflow:hidden}
     s.style.width=s.style.height=d+'px'; s.style.left=(e.clientX-r.left-d/2)+'px'; s.style.top=(e.clientY-r.top-d/2)+'px'; b.appendChild(s); setTimeout(function(){s.remove()},650); });
 
   /* ---------- Taumatropoa ---------- */
+  document.querySelectorAll('.flip-wrap').forEach(function(w){w.addEventListener('click',function(){w.classList.toggle('play')})});
   var th=$('thauma'); if(th){th.onclick=function(){th.classList.toggle('spin')};th.onkeydown=function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();th.classList.toggle('spin')}}}
 
-  /* ---------- POP-UPA: iris-in irekiera klik egindako puntutik ---------- */
-  var kd=$('kd'),lastFocus=null;
-  function openKD(ev){ if(!kd) return; lastFocus=document.activeElement;
+  /* ---------- POP-UPAK: iris-in irekiera klik egindako puntutik ---------- */
+  var HASH={'kd':'ariketa-03-1','samr':'ariketa-03-2'}, cur=null, lastFocus=null;
+  function openKD(ev,id){ var kd=$(id||'kd'); if(!kd) return; if(cur) closeKD(true); lastFocus=document.activeElement; cur=kd;
     var x=ev&&ev.clientX?ev.clientX:innerWidth/2, y=ev&&ev.clientY?ev.clientY:innerHeight/2;
     kd.style.setProperty('--ox',x+'px'); kd.style.setProperty('--oy',y+'px');
     kd.scrollTop=0; kd.setAttribute('aria-hidden','false'); document.body.classList.add('kd-lock');
-    requestAnimationFrame(function(){kd.classList.add('open'); setTimeout(function(){var x=kd.querySelector('.kd-x'); if(x) x.focus({preventScroll:true})},500)});
-    try{ if(!SITE) history.replaceState(null,'','#ariketa-1-1'); }catch(e){} }
-  function closeKD(){ if(!kd||!kd.classList.contains('open')) return; kd.classList.remove('open'); kd.setAttribute('aria-hidden','true');
-    setTimeout(function(){document.body.classList.remove('kd-lock')},reduced?0:600);
-    if(lastFocus) lastFocus.focus({preventScroll:true});
+    var st=kd.querySelector('.samr-stairs'), cl=kd.querySelector('.climber');
+    requestAnimationFrame(function(){ if(st&&cl) cl.style.setProperty('--sw',(st.getBoundingClientRect().width/4)+'px');
+      kd.classList.add('open'); setTimeout(function(){var b=kd.querySelector('.kd-x'); if(b) b.focus({preventScroll:true})},500)});
+    try{ if(!SITE) history.replaceState(null,'','#'+HASH[kd.id]); }catch(e){} }
+  function closeKD(quick){ var kd=cur; if(!kd) return; cur=null; kd.classList.remove('open'); kd.setAttribute('aria-hidden','true');
+    if(!quick) setTimeout(function(){ if(!cur) document.body.classList.remove('kd-lock')},reduced?0:600);
+    if(lastFocus&&!quick) lastFocus.focus({preventScroll:true});
     try{ if(!SITE) history.replaceState(null,'',location.pathname+location.search); }catch(e){} }
-  document.querySelectorAll('[data-open-kd]').forEach(function(b){b.addEventListener('click',openKD)});
-  document.querySelectorAll('[data-close-kd]').forEach(function(b){b.addEventListener('click',closeKD)});
-  if(kd) kd.addEventListener('click',function(e){ if(e.target===kd) closeKD(); });
+  document.querySelectorAll('[data-open-kd]').forEach(function(b){b.addEventListener('click',function(ev){openKD(ev,b.getAttribute('data-open-kd')||'kd')})});
+  document.querySelectorAll('[data-close-kd]').forEach(function(b){b.addEventListener('click',function(){closeKD()})});
+  document.querySelectorAll('.kd-modal').forEach(function(m){ m.addEventListener('click',function(e){ if(e.target===m) closeKD(); }); });
   document.addEventListener('keydown',function(e){ if(e.key==='Escape') closeKD();
-    if(e.key==='Tab'&&kd&&kd.classList.contains('open')){ var f=kd.querySelectorAll('button,[href],[tabindex]:not([tabindex="-1"])'); if(!f.length) return;
+    if(e.key==='Tab'&&cur){ var f=cur.querySelectorAll('button,[href],[tabindex]:not([tabindex="-1"])'); if(!f.length) return;
       var a=f[0],z=f[f.length-1]; if(e.shiftKey&&document.activeElement===a){e.preventDefault();z.focus()} else if(!e.shiftKey&&document.activeElement===z){e.preventDefault();a.focus()} } });
   document.querySelectorAll('.kd-comp').forEach(function(c,ci){ c.querySelectorAll('.kdc.on').forEach(function(ch,k){ch.style.setProperty('--k',ci*3+k); ch.tabIndex=0;}); c.querySelectorAll('.kdc:not(.on)').forEach(function(ch){ch.tabIndex=0}); });
+  document.querySelectorAll('[data-print-kd]').forEach(function(b){b.onclick=function(){window.print()}});
   function gotoToc(){ closeKD(); var tgt=$('aurkibidea');
     if(tgt){ setTimeout(function(){tgt.scrollIntoView({behavior:reduced?'auto':'smooth'})},reduced?0:500); }
     else if(SITE){ window.open(SITE+'/'+PAGES['aurkibidea'],'_top'); } }
@@ -1106,8 +1314,7 @@ body.kd-lock{overflow:hidden}
   var fab=$('fabToc');
   if(fab){ var tocEl=$('aurkibidea'); var upd=function(){ var away=tocEl?tocEl.getBoundingClientRect().bottom<0:scrollY>300; fab.classList.toggle('show',away); };
     addEventListener('scroll',upd,{passive:true}); upd(); }
-  var kp=$('kdPrint'); if(kp) kp.onclick=function(){window.print()};
-  if(location.hash==='#ariketa-1-1') setTimeout(function(){openKD()},400);
+  (function(){ var h=location.hash.slice(1); for(var k in HASH){ if(HASH[k]===h||(k==='kd'&&h==='ariketa-1-1')) setTimeout(function(id){return function(){openKD(null,id)}}(k),400); } })();
 
   /* ---------- Mugimendua gelditu ---------- */
   var ms=document.createElement('style'); ms.textContent='*,*::before,*::after{animation-play-state:paused!important}';
@@ -1118,7 +1325,7 @@ body.kd-lock{overflow:hidden}
   function exportHTML(){
     var c=root.cloneNode(true); c.classList.remove('js');
     c.querySelectorAll('[data-orig]').forEach(unsplit);
-    c.querySelectorAll('.in,.done,.act,.spin,.open,.show').forEach(function(x){x.classList.remove('in','done','act','spin','open')});
+    c.querySelectorAll('.in,.done,.act,.spin,.open,.show,.play').forEach(function(x){x.classList.remove('in','done','act','spin','open','show','play')});
     c.querySelectorAll('.kdc').forEach(function(x){x.removeAttribute('tabindex');x.style.removeProperty('--k')});
     c.querySelectorAll('.kd-comp .kdc').forEach(function(x){ if(x.getAttribute('data-was-on')) x.classList.add('on'); });
     var b=c.querySelector('body'); b.classList.remove('kd-lock');
@@ -1128,7 +1335,7 @@ body.kd-lock{overflow:hidden}
     c.querySelectorAll('.ripple').forEach(function(x){x.remove()});
     c.querySelectorAll('style').forEach(function(s){ if(s.textContent.indexOf('animation-play-state:paused')>-1) s.remove(); });
     var t=c.querySelector('#toast'); if(t){t.className='toast';t.textContent='';}
-    var k=c.querySelector('#kd'); if(k){k.setAttribute('aria-hidden','true');k.removeAttribute('style');}
+    c.querySelectorAll('.kd-modal').forEach(function(k){k.setAttribute('aria-hidden','true');k.removeAttribute('style');var cl=k.querySelector('.climber'); if(cl) cl.removeAttribute('style');});
     var blob=new Blob(['<!DOCTYPE html>\n'+c.outerHTML],{type:'text/html'});
     var a=document.createElement('a'); a.href=URL.createObjectURL(blob); a.download='portfolioa-animazioaren-historia-CC0.html';
     document.body.appendChild(a); a.click(); setTimeout(function(){URL.revokeObjectURL(a.href);a.remove()},500);
@@ -1141,7 +1348,7 @@ body.kd-lock{overflow:hidden}
   var leader=$('leader'),cover=$('coverTitle');
   function startCover(){ startObs(); }
   if(leader){ var seen=false; try{seen=sessionStorage.getItem('aot-intro')==='1'}catch(e){}
-    if(reduced||seen||location.hash==='#ariketa-1-1'){ leader.classList.add('gone'); startCover(); }
+    if(reduced||seen||/^#ariketa/.test(location.hash)){ leader.classList.add('gone'); startCover(); }
     else { var nEl=$('leaderNum'),ring=leader.querySelector('.leader-ring'),st=performance.now(),done=false;
       var end=function(){if(done)return;done=true;leader.classList.add('gone');try{sessionStorage.setItem('aot-intro','1')}catch(e){}setTimeout(startCover,250)};
       (function loop(t){if(done)return;var x=(t-st)/650,c=3-Math.floor(x);if(c<1){end();return}nEl.textContent=c;ring.style.setProperty('--sweep',((x%1)*360)+'deg');requestAnimationFrame(loop)})(st);
