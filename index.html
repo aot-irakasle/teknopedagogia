@@ -12,7 +12,7 @@
   NIRE PORTFOLIO DIGITALA · Arantza Otaduy Tristán · CC0 1.0 (domeinu publikoa)
   Portfolioa itxita dago (ezin da hemen editatu), baina HTML hau libreki deskargatu, aldatu eta berrerabil dezakezu (CC0 1.0).
   SALBUESPENA: ariketen txantiloiak (pop-upak) Hezkuntza Sailarenak dira (Berritzegune Nagusia) eta beste CC lizentzia bat dute; errespetatu jatorrizko lizentzia.
-  Egitura: 00 Aurkibidea · 01 Orri nagusia · 02 Aurkezpena · 03 Eduki digitalak (03.1 eta 03.2 ariketak, pop-upak)
+  Egitura: 00 Aurkibidea · 01 Orri nagusia · 02 Aurkezpena · 03 Eduki digitalak (03.1, 03.2 eta 03.3 ariketak, pop-upak)
   "Konpetentzia digitala gure arloan" txantiloia: Hezkuntza Saila © 2024, Berritzegune Nagusia (CC BY-NC-SA 4.0).
 -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -821,6 +821,79 @@ body.kd-lock{overflow:hidden}
 .toolbar{padding-top:10px;padding-bottom:10px}
 @media (max-width:760px){.hero-band{height:200px}.hero-cap{top:auto;bottom:8px}.tb-title{font-size:1.1rem}}
 @media (prefers-reduced-motion:reduce){.tb-title .ch{animation:none!important;opacity:1!important;transform:none!important}}
+
+/* ================= 03.2 TPACK pop-upa ================= */
+.tp-goal{background:#e8f2fb;border-radius:14px;padding:12px 16px;margin:16px 0 6px;font-size:.95rem}
+.tp-tabs{position:relative;display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 6px;padding-bottom:10px}
+.tp-tab{position:relative;display:inline-flex;align-items:center;gap:8px;border:2px solid #c3d4e6;background:#fdfeff;color:#24466b;border-radius:999px;padding:5px 14px 5px 5px;font:800 .92rem var(--body);cursor:pointer;transition:transform .3s var(--bounce),border-color .2s,background .2s}
+.tp-tab:hover{transform:translateY(-2px);border-color:#3a6ea5}
+.tp-tab[aria-selected="true"]{background:#24466b;border-color:#24466b;color:#fff}
+.tp-tab.own{border-color:var(--accent)}
+.tp-tab.own[aria-selected="true"]{background:var(--accent);border-color:var(--accent)}
+.tp-av{width:30px;height:30px;border-radius:50%;display:grid;place-items:center;background:#7fbbe3;color:#fff;font:900 .75rem var(--body);flex:none}
+.tp-tab[aria-selected="true"] .tp-av{background:#fff;color:#24466b}
+.tp-av.big{width:52px;height:52px;font-size:1rem;background:linear-gradient(135deg,#3a6ea5,#7fbbe3)}
+.tp-panel.own .tp-av.big{background:linear-gradient(135deg,var(--accent),#f2a88a)}
+.tp-ink{position:absolute;bottom:0;height:4px;border-radius:4px;background:var(--accent);left:var(--l,0);width:var(--w,0);transition:left .45s var(--bounce),width .45s var(--bounce)}
+.tp-stage{position:relative;min-height:200px}
+.tp-panel.act{animation:tpIn .6s var(--bounce) both}
+.tp-panel.act.back{animation-name:tpInBack}
+@keyframes tpIn{from{opacity:0;transform:translateX(40px) rotate(.6deg)}to{opacity:1;transform:none}}
+@keyframes tpInBack{from{opacity:0;transform:translateX(-40px) rotate(-.6deg)}to{opacity:1;transform:none}}
+.tp-who{display:flex;gap:14px;align-items:center}
+.tp-who small{color:#4b6a88}
+.tp-ask{display:table;margin:14px auto 10px;background:#dcebf8;color:#24466b;font-weight:800;border-radius:10px;padding:6px 22px;letter-spacing:.02em}
+.tp-cols{display:grid;grid-template-columns:repeat(3,1fr);border:2px solid #7fbbe3;border-radius:16px;overflow:hidden;background:#fdfeff}
+.tp-col{padding:14px 16px;border-right:4px solid #b9dcf2}
+.tp-col:last-child{border-right:0}
+.tp-col h4{font-family:var(--body);font-weight:600;font-size:.98rem;letter-spacing:.06em;color:#24466b;text-align:center;margin:0 0 8px}
+.tp-col h4 b{color:#3a6ea5}
+.tp-col p{font-size:.9rem;line-height:1.55;margin:.6em 0 0}
+.tp-meter{display:flex;justify-content:center;gap:6px}
+.tp-meter i{width:16px;height:16px;border-radius:50%;background:#e3ecf5;border:2px solid #c3d4e6}
+.tp-meter i.on{background:#3a6ea5;border-color:#24466b}
+.tp-panel.own .tp-meter i.on{background:var(--accent);border-color:#a8432f}
+.tp-panel.act .tp-meter i.on{animation:dotpop .5s var(--bounce) both;animation-delay:calc(.35s + var(--d) * .09s)}
+@keyframes dotpop{0%{transform:scale(0)}60%{transform:scale(1.35,.75)}80%{transform:scale(.9,1.12)}100%{transform:none}}
+.tp-prof{display:grid;grid-template-columns:1fr 250px;gap:16px;align-items:center}
+.tp-pills{font-size:.82rem;color:#6b7f95}
+.tp-verdict{margin:.7em 0 .2em!important;font-weight:700;color:#24466b}
+.tp-badge{display:inline-block;background:var(--accent);color:#fff;font-family:var(--display);font-weight:900;border-radius:10px;padding:2px 12px;margin-right:6px;font-size:1.05rem}
+.tp-panel.act .tp-badge{animation:chip .7s var(--bounce) both .5s}
+.tp-venn{width:100%;height:auto}
+.tp-venn .vc{stroke:#24466b;stroke-width:2.5;fill-opacity:.38}
+.tp-venn .vc.c{fill:#7fbbe3}.tp-venn .vc.p{fill:#e8c56b}.tp-venn .vc.t{fill:#f2a88a}
+.tp-venn .vl{font:900 14px var(--body);fill:#24466b}
+.tp-spot{fill:var(--accent);stroke:#fff;stroke-width:3;transform-box:fill-box;transform-origin:center}
+.tp-spotlab{font:900 8.5px var(--body);fill:#fff;pointer-events:none}
+.tp-panel.act .tp-spot{animation:spotIn 1s var(--bounce) both .45s,spotPulse 1.8s ease-in-out 1.5s infinite}
+.tp-panel.act .tp-spotlab{animation:fadeIn .4s ease both 1.1s}
+@keyframes spotIn{from{transform:translate(var(--sx),var(--sy)) scale(0)}to{transform:none}}
+@keyframes spotPulse{50%{transform:scale(1.18);filter:drop-shadow(0 0 6px rgba(200,85,61,.8))}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+.tp-arrow{stroke-dasharray:22;stroke-dashoffset:22}
+.tp-panel.act .tp-arrow{animation:arrowDraw .8s ease both 1.3s}
+@keyframes arrowDraw{to{stroke-dashoffset:0}}
+.tp-refl{background:#e8f2fb}
+.tp-refl p{line-height:1.55}
+.tp-nav{display:flex;justify-content:space-between;align-items:center;margin:14px 0 4px}
+.tp-count{font-weight:800;color:#4b6a88}
+@media (max-width:700px){.tp-cols{grid-template-columns:1fr}.tp-col{border-right:0;border-bottom:4px solid #b9dcf2}.tp-col:last-child{border-bottom:0}.tp-prof{grid-template-columns:1fr}.tp-venn{max-width:240px;margin:0 auto;display:block}.tp-tab{font-size:.82rem}}
+@media (prefers-reduced-motion:reduce){.tp-panel.act,.tp-panel.act *{animation:none!important}.tp-arrow{stroke-dashoffset:0}}
+@media print{.tp-panel[hidden]{display:block!important;break-before:page}.tp-tabs,.tp-nav{display:none!important}.tp-arrow{stroke-dashoffset:0}.tp-meter i.on,.tp-badge,.tp-spot,.tp-av{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+
+.tp-extra{border:2px dashed #f2a88a;border-radius:16px;padding:10px 14px;margin:12px 0 4px;background:#fff8f4}
+.tp-extra summary{color:var(--accent)}
+.tp-extra ul{list-style:none;padding:0;margin:10px 0 2px;display:flex;flex-wrap:wrap;gap:7px}
+.tp-extra li{font-size:.8rem;font-weight:700;color:#24466b;background:#fdfeff;border:1.5px solid #c3d4e6;border-radius:999px;padding:4px 11px;line-height:1.3}
+.tp-panel.act .tp-extra[open] li{animation:dotpop .5s var(--bounce) both;animation-delay:calc(.3s + var(--d) * .05s)}
+@media print{.tp-extra li{animation:none!important}}
+.tp-panel{padding:0!important;border:0!important;background:none!important;overflow:visible!important}
+.tp-panel::before,.tp-panel::after{display:none!important}
+.tp-extra li.now{background:var(--accent);border-color:var(--accent);color:#fff;display:inline-flex;align-items:center;gap:7px}
+.now-dot{width:9px;height:9px;border-radius:50%;background:#fff;box-shadow:0 0 0 0 rgba(255,255,255,.8);animation:nowPulse 1.6s ease-out infinite}
+@keyframes nowPulse{0%{box-shadow:0 0 0 0 rgba(255,255,255,.85)}100%{box-shadow:0 0 0 9px rgba(255,255,255,0)}}
+@media (prefers-reduced-motion:reduce){.now-dot{animation:none}}
 </style>
 </head>
 <body>
@@ -997,7 +1070,8 @@ body.kd-lock{overflow:hidden}
       <li><a data-page="aurkezpena" href="#aurkezpena"><span class="n">02</span>Aurkezpena</a></li>
       <li><a data-page="eduki-digitalak" href="#eduki-digitalak"><span class="n">03</span>Eduki digitalak</a>
         <ol><li><button class="toc-open" data-open-kd="kd"><span class="n">03.1</span>Konpetentzia digitala gure arloan <span class="pill">Ireki ▶</span></button></li>
-            <li><button class="toc-open" data-open-kd="samr"><span class="n">03.2</span>SAMR jarduera: «Mugimenduaren artxiboa» <span class="pill">Ireki ▶</span></button></li></ol>
+            <li><button class="toc-open" data-open-kd="tpack"><span class="n">03.2</span>TPACK ezagutzen: lau irakasle-profil <span class="pill">Ireki ▶</span></button></li>
+            <li><button class="toc-open" data-open-kd="samr"><span class="n">03.3</span>SAMR jarduera: «Mugimenduaren artxiboa» <span class="pill">Ireki ▶</span></button></li></ol>
       </li>
       <li class="soon"><span><span class="n">04</span>Irakaskuntza eta ikaskuntza <span class="pill">Laster</span></span></li>
       <li class="soon"><span><span class="n">05</span>Ebaluazioa (modulua) <span class="pill">Laster</span></span></li>
@@ -1151,7 +1225,7 @@ body.kd-lock{overflow:hidden}
       <h2 data-split>Eduki digitalak</h2>
       <div class="intro-grid ed-intro">
         <div class="rv">
-          <p class="lead">Atal honetan, IADren lehen moduluan (<b>Eduki digitalak</b>) egindako ariketak biltzen ditut. Bi galderari erantzun nahi diet: zer konpetentzia digital daude nire ikasgaiaren curriculumean (<b>03.1</b>)? Eta nola eraldatu daiteke teknologiaren bidez benetako jarduera bat, SAMR ereduaren arabera (<b>03.2</b>)?</p>
+          <p class="lead">Atal honetan, IADren lehen moduluan (<b>Eduki digitalak</b>) egindako ariketak biltzen ditut. Hiru galderari erantzun nahi diet: zer konpetentzia digital daude nire ikasgaiaren curriculumean (<b>03.1</b>)? Zer ezagutza uztartzen ditut irakasle gisa, TPACK ereduaren arabera (<b>03.2</b>)? Eta nola eraldatu daiteke teknologiaren bidez benetako jarduera bat, SAMR ereduaren arabera (<b>03.3</b>)?</p>
           <p class="ed-sites">Sites gunean: <i>Aurkibidea › 1. Eduki digitalak</i></p>
         </div>
         <div class="flip-wrap rv" style="--d:.2s" role="img" aria-label="Flip-book animatua: pilota bat jauzika orriak pasatzean">
@@ -1189,6 +1263,27 @@ body.kd-lock{overflow:hidden}
       <article class="lana rv" style="margin-top:28px">
         <div class="side">
           <div class="num">03.2</div>
+          <div><small>Data</small><p>2026ko azaroa</p></div>
+          <div><small>Modulua</small><p>1. Eduki digitalak</p></div>
+          <div><small>Oinarria</small><p>TPACK eredua · 3 irakasle-profil</p></div>
+          <div><small>Egoera</small><p>✓ Eginda</p></div>
+        </div>
+        <div class="body">
+          <div class="tags"><span class="tag">CK</span><span class="tag">PK</span><span class="tag">TK</span><span class="tag dc">TPACK</span></div>
+          <h3>TPACK ezagutzen: lau irakasle-profil</h3>
+          <p>Hiru irakasleren profilak (Ander, Nekane eta Aitzol) eta nirea aztertu ditut, TPACK ereduaren hiru ezagutza motak oinarri hartuta. Bakoitzaren profila sailkatu dut, eta TPACKek ekar diezaiokeenari buruz hausnartu dut.</p>
+          <ol class="steps">
+            <li><b>1. urratsa.</b> Hiru irakasle desberdinen profilak irakurri ditut.</li>
+            <li><b>2. urratsa.</b> «TPACK ezagutzen» txantiloia berrerabili eta portfolioaren estetikara egokitu dut, animatuta.</li>
+            <li><b>3. urratsa.</b> Irakasle bakoitzeko CK, PK eta TK aztertu, profila sailkatu eta hausnartu dut. Amaitzeko, neure atala bete dut: trebetasuna, profila eta hausnarketa.</li>
+          </ol>
+          <button class="kd-open-btn" data-open-kd="tpack"><span class="cloudico" aria-hidden="true"></span>Ireki ariketa</button>
+          <p class="hint">Pop-up animatu batean irekitzen da. Fitxak aldatzeko, sakatu izenak edo erabili ← → geziak.</p>
+        </div>
+      </article>
+      <article class="lana rv" style="margin-top:28px">
+        <div class="side">
+          <div class="num">03.3</div>
           <div><small>Data</small><p>2026ko azaroa</p></div>
           <div><small>Modulua</small><p>1. Eduki digitalak</p></div>
           <div><small>Oinarria</small><p>AN1 · UD3 · SAMR eredua</p></div>
@@ -1350,7 +1445,108 @@ body.kd-lock{overflow:hidden}
 </div>
 
 <!-- =========================================================
-     POP-UPA · 03.2 ARIKETA: SAMR JARDUERA
+     POP-UPA · 03.2 ARIKETA: TPACK EZAGUTZEN
+     Txantiloiaren egilea: Hezkuntza Saila © 2024, Berritzegune Nagusia
+     Egokitzapena eta edukia: Arantza Otaduy Tristán
+     ========================================================= -->
+<div id="tpack" class="kd-modal" role="dialog" aria-modal="true" aria-labelledby="tpTitle" aria-hidden="true">
+  <div class="kd-clouds" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+  <article class="kd-sheet">
+    <header class="kd-head">
+      <div class="kd-badge" aria-hidden="true"><span>03.2</span><small>ariketa</small></div>
+      <div>
+        <h2 id="tpTitle" class="kd-title">TPACK ezagutzen</h2>
+        <p class="kd-by">Egilea: <b>Arantza Otaduy Tristán</b> · 03 · Eduki digitalak</p>
+      </div>
+      <button class="kd-x" data-close-kd aria-label="Itxi">✕</button>
+      <svg class="kd-wave" viewBox="0 0 800 40" preserveAspectRatio="none" aria-hidden="true"><path d="M0 40 C60 10 120 10 160 26 C200 6 260 4 300 24 C350 2 420 4 460 26 C500 8 560 6 600 24 C650 4 720 6 800 22 V40Z" fill="#fdfeff"/></svg>
+    </header>
+    <div class="kd-body">
+      <p class="kd-row tp-goal" style="--k:0"><b>Helburua:</b> emandako adibideak aztertuta, TPACK ereduak nire irakas-jardunari zer onura ekar diezaiokeen hausnartzea. Hiru irakasleren profilak aztertu ditut, eta azkenik neure burua.</p>
+      <div class="tp-tabs kd-row" style="--k:1" role="tablist" aria-label="Irakasleen profilak"><button role="tab" class="tp-tab" id="tpt-ander" aria-controls="tpp-ander" aria-selected="true" tabindex="0" data-i="0"><span class="tp-av">AA</span><span>Ander</span></button><button role="tab" class="tp-tab" id="tpt-nekane" aria-controls="tpp-nekane" aria-selected="false" tabindex="-1" data-i="1"><span class="tp-av">NU</span><span>Nekane</span></button><button role="tab" class="tp-tab" id="tpt-aitzol" aria-controls="tpp-aitzol" aria-selected="false" tabindex="-1" data-i="2"><span class="tp-av">AU</span><span>Aitzol</span></button><button role="tab" class="tp-tab own" id="tpt-ni" aria-controls="tpp-ni" aria-selected="false" tabindex="-1" data-i="3"><span class="tp-av">AO</span><span>Ni · Arantza</span></button><span class="tp-ink" aria-hidden="true"></span></div>
+      <div class="tp-stage kd-row" style="--k:2">
+      <section class="tp-panel" role="tabpanel" id="tpp-ander" aria-labelledby="tpt-ander">
+        <div class="sk tp-who"><span class="tp-av big">AA</span><div><b>IRAKASLEA:</b> Ander Aranburu<br><small>56 urte · 32 urte irakaskuntzan · DBH: Historia</small></div></div>
+        <div class="tp-ask">Zein da bere trebetasuna...</div>
+        <div class="tp-cols">
+          <div class="tp-col"><h4>...edukien ezagutzan <b>(CK)</b>?</h4><span class="tp-meter" role="img" aria-label="5/5"><i class="on" style="--d:0"></i><i class="on" style="--d:1"></i><i class="on" style="--d:2"></i><i class="on" style="--d:3"></i><i class="on" style="--d:4"></i></span><p>Oso altua. Historian aditua da, eta gaiarekiko grina gaztetatik dator. Hiru hamarkadako esperientziak edukia sakon menderatzen duela erakusten du.</p></div>
+          <div class="tp-col"><h4>...pedagogiaren ezagutzan <b>(PK)</b>?</h4><span class="tp-meter" role="img" aria-label="3/5"><i class="on" style="--d:0"></i><i class="on" style="--d:1"></i><i class="on" style="--d:2"></i><i class="" style="--d:3"></i><i class="" style="--d:4"></i></span><p>Ertaina. Irakaskuntza magistrala eta testuliburua ditu oinarri, eta jarduera praktiko tradizionalak egiten ditu (laburpenak, galdetegiak). Eszeptikoa da metodologia aktiboen aurrean, eta diziplina eta seriotasuna lehenesten ditu.</p></div>
+          <div class="tp-col"><h4>...ezagutza teknologikoan <b>(TK)</b>?</h4><span class="tp-meter" role="img" aria-label="2/5"><i class="on" style="--d:0"></i><i class="on" style="--d:1"></i><i class="" style="--d:2"></i><i class="" style="--d:3"></i><i class="" style="--d:4"></i></span><p>Baxua. Oinarrizko konpetentzia digitalak ditu (nabigatzea, posta elektronikoa, testu-prozesadorea), baina gutxitan erabiltzen ditu ikasgelan.</p></div>
+        </div>
+        <div class="sk tp-prof">
+          <div><b>Zelan sailkatuko zenuke irakasle honen profila TPACK ereduaren arabera?</b> <span class="tp-pills">(CK, TK, PK, PCK, TCK, TPK, TPACK)</span>
+            <p class="tp-verdict"><span class="tp-badge">PCK</span> Ezagutza pedagogiko-didaktikoa (edukia + pedagogia)</p><p>Edukia eta pedagogia uztartzen ditu, baina teknologia ez da bere irakaskuntzaren parte.</p></div>
+          <svg class="tp-venn" viewBox="0 0 240 190" role="img" aria-label="TPACK Venn diagrama: PCK"><defs><marker id="tpHead" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8z" fill="#c8553d"/></marker></defs><circle class="vc c" cx="92" cy="76" r="56"/><circle class="vc p" cx="148" cy="76" r="56"/><circle class="vc t" cx="120" cy="124" r="56"/><text x="56" y="44" class="vl">CK</text><text x="184" y="44" class="vl">PK</text><text x="120" y="178" class="vl" text-anchor="middle">TK</text><circle class="tp-spot" cx="120" cy="58" r="15" style="--sx:0px;--sy:38px"/><text class="tp-spotlab" x="120" y="62" text-anchor="middle">PCK</text></svg>
+        </div>
+        <div class="sk tp-refl"><b>Hausnartu hurrengo galderei erantzuten:</b>
+          <p><b>Zeintzuk dira bere sentipenak bere egoeraren aurrean?</b> Segurtasuna eta konfiantza sentitzen ditu bere metodoan, urteetan funtzionatu diolako. Aldaketen aurrean, aldiz, eszeptizismoa eta, seguru asko, nolabaiteko ziurgabetasuna teknologiarekiko.</p><p><b>Zelan laguntzen dio bere ikastetxeko testuinguruak?</b> Profilak ez du aipatzen ikastetxeak aldaketa bultzatzen duenik. Ematen du ingurunea ez dela erronka bat beretzat, eta horrek bere ohiturak mantentzea errazten du.</p><p><b>Zer emango lioke TPACK eredua ezagutzeak irakas-jarduerari?</b> TPACKek erakutsiko lioke teknologiak ez duela bere ezagutza ordezkatzen, aberasten baizik: iturri historiko digitalak, mapa interaktiboak edo denbora-lerroak bere azalpenen zerbitzura. Urratsez urrats has liteke, bere CK eta PCK sendoetan oinarrituta.</p></div>
+      </section>
+      <section class="tp-panel" role="tabpanel" id="tpp-nekane" aria-labelledby="tpt-nekane" hidden>
+        <div class="sk tp-who"><span class="tp-av big">NU</span><div><b>IRAKASLEA:</b> Nekane Urigoitia<br><small>38 urte · 12 urte irakaskuntzan · Batxilergoa: Matematika eta IKT</small></div></div>
+        <div class="tp-ask">Zein da bere trebetasuna...</div>
+        <div class="tp-cols">
+          <div class="tp-col"><h4>...edukien ezagutzan <b>(CK)</b>?</h4><span class="tp-meter" role="img" aria-label="5/5"><i class="on" style="--d:0"></i><i class="on" style="--d:1"></i><i class="on" style="--d:2"></i><i class="on" style="--d:3"></i><i class="on" style="--d:4"></i></span><p>Altua. Matematika eta IKT irakaslea da, eta matematika testuinguruan kokatutako erronken bidez irakasten du.</p></div>
+          <div class="tp-col"><h4>...pedagogiaren ezagutzan <b>(PK)</b>?</h4><span class="tp-meter" role="img" aria-label="5/5"><i class="on" style="--d:0"></i><i class="on" style="--d:1"></i><i class="on" style="--d:2"></i><i class="on" style="--d:3"></i><i class="on" style="--d:4"></i></span><p>Altua. Metodologia aktiboetan aditua da (erronketan oinarritutako ikaskuntza), eta estrategia propioak garatu ditu. Etengabe prestatzen da, eta jardunbide egokiak partekatzen ditu kongresuetan eta nazioarteko proiektuetan.</p></div>
+          <div class="tp-col"><h4>...ezagutza teknologikoan <b>(TK)</b>?</h4><span class="tp-meter" role="img" aria-label="5/5"><i class="on" style="--d:0"></i><i class="on" style="--d:1"></i><i class="on" style="--d:2"></i><i class="on" style="--d:3"></i><i class="on" style="--d:4"></i></span><p>Oso altua. Irakaskuntzako konpetentzia digitalean espezializatua da, eta material ireki propioak sortu eta zabaltzen ditu.</p></div>
+        </div>
+        <div class="sk tp-prof">
+          <div><b>Zelan sailkatuko zenuke irakasle honen profila TPACK ereduaren arabera?</b> <span class="tp-pills">(CK, TK, PK, PCK, TCK, TPK, TPACK)</span>
+            <p class="tp-verdict"><span class="tp-badge">TPACK</span> Ezagutza teknologiko-pedagogiko-didaktikoa (osoa)</p><p>Hiru ezagutzak uztartzen ditu, eta teknologia edukiaren eta pedagogiaren zerbitzura jartzen du.</p></div>
+          <svg class="tp-venn" viewBox="0 0 240 190" role="img" aria-label="TPACK Venn diagrama: TPACK"><defs><marker id="tpHead" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8z" fill="#c8553d"/></marker></defs><circle class="vc c" cx="92" cy="76" r="56"/><circle class="vc p" cx="148" cy="76" r="56"/><circle class="vc t" cx="120" cy="124" r="56"/><text x="56" y="44" class="vl">CK</text><text x="184" y="44" class="vl">PK</text><text x="120" y="178" class="vl" text-anchor="middle">TK</text><circle class="tp-spot" cx="120" cy="96" r="15" style="--sx:0px;--sy:0px"/><text class="tp-spotlab" x="120" y="100" text-anchor="middle">TPACK</text></svg>
+        </div>
+        <div class="sk tp-refl"><b>Hausnartu hurrengo galderei erantzuten:</b>
+          <p><b>Zeintzuk dira bere sentipenak bere egoeraren aurrean?</b> Grina eta motibazio handia ditu, baina frustrazioa eta bakardadea ere sentitzen ditu: bere eragina bere taldeetara mugatzen da, eta bere ahaleginak ez dira aitortzen.</p><p><b>Zelan laguntzen dio bere ikastetxeko testuinguruak?</b> Ez dio laguntzen. Zuzendaritza eta klaustroa uzkur daude aldaketen aurrean, ekimenak blokeatzen dituzte, eta bere denbora eta baliabideak jarri behar izan ditu.</p><p><b>Zer emango lioke TPACK eredua ezagutzeak irakas-jarduerari?</b> Badaki TPACK aplikatzen. Ereduak hizkuntza komun bat eta marko teoriko bat emango lizkioke lankideekin hitz egiteko: teknologia ez dela helburua, ikaskuntza hobetzeko bidea baizik. Horrela, eszeptizismoari erantzun eta proposamenak ebidentziekin arrazoitu ahal izango lituzke.</p></div>
+      </section>
+      <section class="tp-panel" role="tabpanel" id="tpp-aitzol" aria-labelledby="tpt-aitzol" hidden>
+        <div class="sk tp-who"><span class="tp-av big">AU</span><div><b>IRAKASLEA:</b> Aitzol Uriagereka<br><small>27 urte · 2 urte irakaskuntzan · DBH: Natur Zientziak</small></div></div>
+        <div class="tp-ask">Zein da bere trebetasuna...</div>
+        <div class="tp-cols">
+          <div class="tp-col"><h4>...edukien ezagutzan <b>(CK)</b>?</h4><span class="tp-meter" role="img" aria-label="4/5"><i class="on" style="--d:0"></i><i class="on" style="--d:1"></i><i class="on" style="--d:2"></i><i class="on" style="--d:3"></i><i class="" style="--d:4"></i></span><p>Ona. Biologian graduatua da, eta dibulgazio zientifikoarekiko interes handia du. Esperientzia gutxi du oraindik edukia ikasgelara egokitzen.</p></div>
+          <div class="tp-col"><h4>...pedagogiaren ezagutzan <b>(PK)</b>?</h4><span class="tp-meter" role="img" aria-label="3/5"><i class="on" style="--d:0"></i><i class="on" style="--d:1"></i><i class="on" style="--d:2"></i><i class="" style="--d:3"></i><i class="" style="--d:4"></i></span><p>Teorian altua, praktikan garatzen. Metodologia aktiboak ezagutzen ditu (ABP, ikasgela alderantzikatua, ikaskuntza kooperatiboa), baina ez du praktikan jartzeko aukerarik izan, eta ikasgelaren kudeaketa da bere erronka nagusia.</p></div>
+          <div class="tp-col"><h4>...ezagutza teknologikoan <b>(TK)</b>?</h4><span class="tp-meter" role="img" aria-label="5/5"><i class="on" style="--d:0"></i><i class="on" style="--d:1"></i><i class="on" style="--d:2"></i><i class="on" style="--d:3"></i><i class="on" style="--d:4"></i></span><p>Altua. Plataformak, errealitate areagotua eta baliabide interaktiboak diseinatzeko softwarea erabiltzen ditu. Ez ditu ezagutzen online dauden edukiak berrerabiltzearen abantailak.</p></div>
+        </div>
+        <div class="sk tp-prof">
+          <div><b>Zelan sailkatuko zenuke irakasle honen profila TPACK ereduaren arabera?</b> <span class="tp-pills">(CK, TK, PK, PCK, TCK, TPK, TPACK)</span>
+            <p class="tp-verdict"><span class="tp-badge">TPK</span> Ezagutza teknologiko-pedagogikoa</p><p>Teknologia eta pedagogia teorian uztartzen ditu, baina oraindik ez ditu bere ikasgaiaren edukiarekin praktikan lotu. TPACKerako bidean dago.</p></div>
+          <svg class="tp-venn" viewBox="0 0 240 190" role="img" aria-label="TPACK Venn diagrama: TPK"><defs><marker id="tpHead" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8z" fill="#c8553d"/></marker></defs><circle class="vc c" cx="92" cy="76" r="56"/><circle class="vc p" cx="148" cy="76" r="56"/><circle class="vc t" cx="120" cy="124" r="56"/><text x="56" y="44" class="vl">CK</text><text x="184" y="44" class="vl">PK</text><text x="120" y="178" class="vl" text-anchor="middle">TK</text><circle class="tp-spot" cx="150" cy="116" r="15" style="--sx:-30px;--sy:-20px"/><text class="tp-spotlab" x="150" y="120" text-anchor="middle">TPK</text></svg>
+        </div>
+        <div class="sk tp-refl"><b>Hausnartu hurrengo galderei erantzuten:</b>
+          <p><b>Zeintzuk dira bere sentipenak bere egoeraren aurrean?</b> Ilusioa eta energia ditu, baina batzuetan galduta sentitzen da ikasgelan autoritatea eta kontrola mantentzeko. Ziurgabetasuna ere badu, irakasle hasiberria delako.</p><p><b>Zelan laguntzen dio bere ikastetxeko testuinguruak?</b> Klaustroan sartu berri da. Profilak ez du aipatzen laguntzarik jasotzen duenik. Mentoretza batek edo lankide esperientziadunen babesak asko lagunduko liokete.</p><p><b>Zer emango lioke TPACK eredua ezagutzeak irakas-jarduerari?</b> TPACK teoria praktikara eramateko gida izango litzateke: tresnak edukiaren eta pedagogiaren arabera aukeratzea, ez alderantziz. Online dauden baliabide irekiak berrerabiltzen eta egokitzen ere irakatsiko lioke, denbora aurrezteko eta ikasgelaren kudeaketan indarrak jartzeko.</p></div>
+      </section>
+      <section class="tp-panel own" role="tabpanel" id="tpp-ni" aria-labelledby="tpt-ni" hidden>
+        <div class="sk tp-who"><span class="tp-av big">AO</span><div><b>ZURE IZENA:</b> Arantza Otaduy Tristán<br><small>47 urte · Animazioaren Historia (AN1) · Animazioko Goi-mailako Heziketa Zikloa · ID Arte</small></div></div>
+        <details class="tp-extra" open><summary>Prestakuntza eta ibilbidea</summary><ul><li class="now" style="--d:0"><span class="now-dot" aria-hidden="true"></span>Orain: Generative AI for Games Development · HP (egiten ari naiz)</li><li style="--d:1">Artearen Historian lizentziaduna</li><li style="--d:2">Artxibistikan aditua</li><li style="--d:3">Animazioa eta marrazketa</li><li style="--d:4">Adimen artifizialaren erabilera</li><li style="--d:5">Web- eta bideo-edizioa</li><li style="--d:6">Neurodibergentziei buruzko ikasketak</li><li style="--d:7">Inside Digital Higher Education: Self-Assessment Guide for Educators · Dublin City University</li><li style="--d:8">The Museum as a Site and Source for Learning · University of Glasgow</li><li style="--d:9">Exploring Inclusive Pedagogies · British Council</li><li style="--d:10">Experiencias de aprendizaje a través del juego · The LEGO Foundation</li><li style="--d:11">Digital Skills: Artificial Intelligence · Accenture</li><li style="--d:12">Digital Skills: Reimagine your career · Accenture</li><li style="--d:13">Aplicaciones web: SCORM 1.2 en plataformas virtuales de aprendizaje (IFCT014PO)</li><li style="--d:14">EDUNOVATIC 2022 kongresua (bertaratua)</li><li style="--d:15">Liburua: «Pedro de Viteri Arana»</li><li style="--d:16">Lineako argitalpenak: feeleuskadi.com, 4buru, Haritza…</li></ul></details>
+        <div class="tp-ask">Zein da zure trebetasuna...</div>
+        <div class="tp-cols">
+          <div class="tp-col"><h4>...edukien ezagutzan <b>(CK)</b>?</h4><span class="tp-meter" role="img" aria-label="5/5"><i class="on" style="--d:0"></i><i class="on" style="--d:1"></i><i class="on" style="--d:2"></i><i class="on" style="--d:3"></i><i class="on" style="--d:4"></i></span><p>Oso altua. Artearen Historian lizentziaduna eta artxibistikan aditua naiz. Iturri historikoak bilatu, ebaluatu eta antolatzen ohituta nago, eta hori oso baliagarria da Animazioaren Historia (AN1) irakasteko. Animazioan eta marrazketan ere prestatu naiz, eta ikerketa historikoa argitaratu dut: «Pedro de Viteri Arana» liburua eta lineako argitalpenak (feeleuskadi.com, 4buru, Haritza…).</p></div>
+          <div class="tp-col"><h4>...pedagogiaren ezagutzan <b>(PK)</b>?</h4><span class="tp-meter" role="img" aria-label="5/5"><i class="on" style="--d:0"></i><i class="on" style="--d:1"></i><i class="on" style="--d:2"></i><i class="on" style="--d:3"></i><i class="on" style="--d:4"></i></span><p>Oso altua. Pedagogia inklusiboak (British Council), jolasaren bidezko ikaskuntza (The LEGO Foundation) eta museoa ikaskuntza-gune gisa (University of Glasgow) landu ditut, eta neurodibergentziei buruzko ikasketak egin ditut. Ikasgelan jarduera aktiboak proposatzen ditut: infografiak, film-fitxak, mugimendu-irudien egokitzapena eta errubrikekin ebaluatutako proiektuak.</p></div>
+          <div class="tp-col"><h4>...ezagutza teknologikoan <b>(TK)</b>?</h4><span class="tp-meter" role="img" aria-label="4/5"><i class="on" style="--d:0"></i><i class="on" style="--d:1"></i><i class="on" style="--d:2"></i><i class="on" style="--d:3"></i><i class="" style="--d:4"></i></span><p>Altua eta hazten. Adimen artifizialaren erabileran (Accenture), web- eta bideo-edizioan eta e-learningean (SCORM 1.2 estandarra ikaskuntza-plataforma birtualetan) prestatu naiz. Irakaskuntza digitalaren autoebaluazioa ere landu dut (Dublin City University). Gaur egun HPren «Generative AI for Games Development» ikastaroa egiten ari naiz, ikasleei teknologia berriak azaldu ahal izateko. IADn B1 mailan nago, eta portfolio digital hau eraiki dut.</p></div>
+        </div>
+        <div class="sk tp-prof">
+          <div><b>Zein profilarekin identifikatzen zara TPACK ereduaren arabera?</b> <span class="tp-pills">(CK, TK, PK, PCK, TCK, TPK, TPACK)</span>
+            <p class="tp-verdict"><span class="tp-badge">TPACK</span> Hiru ezagutzak uztartzen ditut, eta IADn sendotzen ari naiz</p><p>Edukia (historia eta artxiboak), pedagogia (inklusioa, jolasa, museoa) eta teknologia (AA, weba, bideoa, SCORM) uztartzen ditut. IADk erabaki horiek modu sistematikoan hartzen laguntzen dit (03.1, 03.3).</p></div>
+          <svg class="tp-venn" viewBox="0 0 240 190" role="img" aria-label="TPACK Venn diagrama: TPACK"><defs><marker id="tpHead" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8z" fill="#c8553d"/></marker></defs><circle class="vc c" cx="92" cy="76" r="56"/><circle class="vc p" cx="148" cy="76" r="56"/><circle class="vc t" cx="120" cy="124" r="56"/><text x="56" y="44" class="vl">CK</text><text x="184" y="44" class="vl">PK</text><text x="120" y="178" class="vl" text-anchor="middle">TK</text><circle class="tp-spot" cx="120" cy="96" r="15" style="--sx:0px;--sy:0px"/><text class="tp-spotlab" x="120" y="100" text-anchor="middle">TPACK</text></svg>
+        </div>
+        <div class="sk tp-refl"><b>Hausnartu hurrengo galderei erantzuten:</b>
+          <p><b>Zeintzuk dira zure sentipenak zure egoeraren aurrean?</b> Ilusioa eta jakin-mina sentitzen ditut: etengabe prestatzen naiz, eta ikasten dudana ikasgelara eramatea gustatzen zait. Animazioa beti egon da teknologiari lotuta, eta horrek berritzera bultzatzen nau. Erronkak ere badira: denbora falta, teknologiaren abiadura (batez ere AArena) eta hainbat esparrutan jasotako prestakuntza modu koherentean uztartzea.</p><p><b>Zelan laguntzen dizu zure ikastetxeko testuinguruak?</b> ID Arte arte eta diseinu eskola publikoa da, eta nire ikasleak sortzaile digitalak dira. Ingurune hori irekia da teknologia sortzaileekin esperimentatzeko, eta aukera bat da ikasten dudana praktikan jartzeko.</p><p><b>Zer emango lioke TPACK eredua ezagutzeak zure irakas-jarduerari?</b> TPACKek marko bakar batean antolatzen laguntzen dit hainbat esparrutan jasotako prestakuntza (artxibistika, inklusioa, AA, SCORM). Irizpide argi bat ere ematen dit: lehenik edukia eta pedagogia, eta gero haien zerbitzura dagoen teknologia. Adibidez, artxibo digitalak UD3ko kronofotografia-jardueran (03.3), edo baliabide irisgarriak ikasle neurodibergenteentzat.</p></div>
+      </section>
+      </div>
+      <div class="tp-nav kd-row" style="--k:3"><button class="btn2" data-tp-step="-1">← Aurrekoa</button><span class="tp-count" aria-live="polite">1 / 4</span><button class="btn2" data-tp-step="1">Hurrengoa →</button></div>
+      <div class="kd-actions">
+        <button class="btn2 goto-toc" data-goto-toc><span class="tt-arrow">↑</span> Aurkibidera</button>
+        <button class="btn2" data-print-kd>🖨 Inprimatu / PDF</button>
+        <button class="btn2 solid" data-close-kd>Itxi ariketa</button>
+      </div>
+    </div>
+    <footer class="kd-foot">
+      <span>Egilea: <b>Arantza Otaduy Tristán</b> · 2026</span>
+      <span>Txantiloiaren egilea: Hezkuntza Saila © 2024 · Berritzegune Nagusia · Egokitzapena: Arantza Otaduy Tristán</span>
+    </footer>
+  </article>
+</div>
+
+<!-- =========================================================
+     POP-UPA · 03.3 ARIKETA: SAMR JARDUERA
      Txantiloiaren egilea: Hezkuntza Saila © 2024, Berritzegune Nagusia
      Egokitzapena eta edukia: Arantza Otaduy Tristán
      ========================================================= -->
@@ -1358,7 +1554,7 @@ body.kd-lock{overflow:hidden}
   <div class="kd-clouds" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
   <article class="kd-sheet">
     <header class="kd-head">
-      <div class="kd-badge" aria-hidden="true"><span>03.2</span><small>ariketa</small></div>
+      <div class="kd-badge" aria-hidden="true"><span>03.3</span><small>ariketa</small></div>
       <div>
         <h2 id="samrTitle" class="kd-title">SAMR jarduera</h2>
         <p class="kd-by">Egilea: <b>Arantza Otaduy Tristán</b> · 03 · Eduki digitalak</p>
@@ -1517,14 +1713,14 @@ body.kd-lock{overflow:hidden}
   var th=$('thauma'); if(th){th.onclick=function(){th.classList.toggle('spin')};th.onkeydown=function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();th.classList.toggle('spin')}}}
 
   /* ---------- POP-UPAK: iris-in irekiera klik egindako puntutik ---------- */
-  var HASH={'kd':'ariketa-03-1','samr':'ariketa-03-2'}, cur=null, lastFocus=null;
+  var HASH={'kd':'ariketa-03-1','tpack':'ariketa-03-2','samr':'ariketa-03-3'}, cur=null, lastFocus=null;
   function openKD(ev,id){ var kd=$(id||'kd'); if(!kd) return; if(cur) closeKD(true); lastFocus=document.activeElement; cur=kd;
     var x=ev&&ev.clientX?ev.clientX:innerWidth/2, y=ev&&ev.clientY?ev.clientY:innerHeight/2;
     kd.style.setProperty('--ox',x+'px'); kd.style.setProperty('--oy',y+'px');
     kd.scrollTop=0; kd.setAttribute('aria-hidden','false'); document.body.classList.add('kd-lock');
     var st=kd.querySelector('.samr-stairs'), cl=kd.querySelector('.climber');
     requestAnimationFrame(function(){ if(st&&cl) cl.style.setProperty('--sw',(st.getBoundingClientRect().width/4)+'px');
-      kd.classList.add('open'); setTimeout(function(){var b=kd.querySelector('.kd-x'); if(b) b.focus({preventScroll:true})},500)});
+      kd.classList.add('open'); if(kd.querySelector('.tp-tabs')) tpShow(kd,0,1); setTimeout(function(){var b=kd.querySelector('.kd-x'); if(b) b.focus({preventScroll:true})},500)});
     try{ if(!SITE) history.replaceState(null,'','#'+HASH[kd.id]); }catch(e){} }
   function closeKD(quick){ var kd=cur; if(!kd) return; cur=null; kd.classList.remove('open'); kd.setAttribute('aria-hidden','true');
     if(!quick) setTimeout(function(){ if(!cur) document.body.classList.remove('kd-lock')},reduced?0:600);
@@ -1538,6 +1734,23 @@ body.kd-lock{overflow:hidden}
       var a=f[0],z=f[f.length-1]; if(e.shiftKey&&document.activeElement===a){e.preventDefault();z.focus()} else if(!e.shiftKey&&document.activeElement===z){e.preventDefault();a.focus()} } });
   document.querySelectorAll('.kd-comp').forEach(function(c,ci){ c.querySelectorAll('.kdc.on').forEach(function(ch,k){ch.style.setProperty('--k',ci*3+k); ch.tabIndex=0;}); c.querySelectorAll('.kdc:not(.on)').forEach(function(ch){ch.tabIndex=0}); });
   document.querySelectorAll('[data-print-kd]').forEach(function(b){b.onclick=function(){window.print()}});
+  /* ---------- TPACK fitxak (tabs) ---------- */
+  function tpShow(root,i,dir){ var tabs=[].slice.call(root.querySelectorAll('.tp-tab')), panels=[].slice.call(root.querySelectorAll('.tp-panel')); if(!tabs.length) return;
+    i=(i+tabs.length)%tabs.length;
+    tabs.forEach(function(t,k){ var on=k===i; t.setAttribute('aria-selected',on); t.tabIndex=on?0:-1; });
+    panels.forEach(function(p,k){ p.classList.remove('act','back'); if(k===i){ p.hidden=false; void p.offsetWidth; p.classList.add('act'); if(dir<0) p.classList.add('back'); } else p.hidden=true; });
+    var ink=root.querySelector('.tp-ink'), t=tabs[i], bar=t.parentNode.getBoundingClientRect(), r=t.getBoundingClientRect();
+    if(ink){ ink.style.setProperty('--l',(r.left-bar.left)+'px'); ink.style.setProperty('--w',r.width+'px'); ink.style.top=(r.bottom-bar.top+3)+'px'; ink.style.bottom='auto'; }
+    var c=root.querySelector('.tp-count'); if(c) c.textContent=(i+1)+' / '+tabs.length;
+    root.dataset.tpi=i; }
+  document.querySelectorAll('.kd-modal').forEach(function(m){ if(!m.querySelector('.tp-tabs')) return;
+    m.querySelectorAll('.tp-tab').forEach(function(t,k){ t.addEventListener('click',function(){ var cur=+(m.dataset.tpi||0); tpShow(m,k,k<cur?-1:1); t.focus(); }); });
+    m.querySelector('.tp-tabs').addEventListener('keydown',function(e){ var cur=+(m.dataset.tpi||0);
+      if(e.key==='ArrowRight'){e.preventDefault();tpShow(m,cur+1,1);m.querySelectorAll('.tp-tab')[(cur+1)%4].focus();}
+      if(e.key==='ArrowLeft'){e.preventDefault();tpShow(m,cur-1,-1);var n=m.querySelectorAll('.tp-tab');n[(cur-1+n.length)%n.length].focus();} });
+    m.querySelectorAll('[data-tp-step]').forEach(function(b){ b.addEventListener('click',function(){ var d=+b.getAttribute('data-tp-step'); tpShow(m,+(m.dataset.tpi||0)+d,d); var st=m.querySelector('.tp-stage'); if(st) st.scrollIntoView({behavior:reduced?'auto':'smooth',block:'start'}); }); });
+  });
+  window.addEventListener('resize',function(){ document.querySelectorAll('.kd-modal.open').forEach(function(m){ if(m.querySelector('.tp-tabs')) tpShow(m,+(m.dataset.tpi||0),0); }); });
   function gotoToc(){ closeKD(); var tgt=$('aurkibidea');
     if(tgt){ setTimeout(function(){tgt.scrollIntoView({behavior:reduced?'auto':'smooth'})},reduced?0:500); }
     else if(SITE){ window.open(SITE+'/'+PAGES['aurkibidea'],'_top'); } }
@@ -1566,6 +1779,7 @@ body.kd-lock{overflow:hidden}
     c.querySelectorAll('.ripple').forEach(function(x){x.remove()});
     c.querySelectorAll('style').forEach(function(s){ if(s.textContent.indexOf('animation-play-state:paused')>-1) s.remove(); });
     var t=c.querySelector('#toast'); if(t){t.className='toast';t.textContent='';}
+    c.querySelectorAll('.tp-panel').forEach(function(p,k){p.classList.remove('act','back'); if(k%4===0) p.removeAttribute('hidden'); else p.setAttribute('hidden','');}); c.querySelectorAll('.tp-tab').forEach(function(t,k){t.setAttribute('aria-selected',k===0);t.tabIndex=k===0?0:-1;}); c.querySelectorAll('.tp-ink').forEach(function(x){x.removeAttribute('style')});
     c.querySelectorAll('.kd-modal').forEach(function(k){k.setAttribute('aria-hidden','true');k.removeAttribute('style');var cl=k.querySelector('.climber'); if(cl) cl.removeAttribute('style');});
     var blob=new Blob(['<!DOCTYPE html>\n'+c.outerHTML],{type:'text/html'});
     var a=document.createElement('a'); a.href=URL.createObjectURL(blob); a.download='portfolioa-animazioaren-historia-CC0.html';
